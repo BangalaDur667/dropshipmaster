@@ -9,15 +9,12 @@ const Home = ({ products, bannerData }) => (
       <h2>Nouvelle Collection Hiver 2022</h2>
       <p>Speakers of many variations</p>
     </div>
-
     <div className="products-container">
-      {products &&
-        products.map((product) => {
-          return <Product key={50} product={product} />;
-        })}
+      {products?.map((product) => {
+        return <Product key={product._id} product={product} />;
+      })}
     </div>
-
-    <FooterBanner />
+    <FooterBanner footerBanner={bannerData && bannerData[0]} />
   </div>
 );
 
